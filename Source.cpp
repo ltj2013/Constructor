@@ -1,5 +1,7 @@
 #include <iostream>
 #include "constructor.h"
+#include "TemplateTest.h"
+
 #include <string>
 using namespace std;
 using namespace learning;
@@ -23,16 +25,19 @@ addPtrUsing addp3 = add;
 addPtr addp = add;
 #endif
 int main() {
-	learning::Constructor<float> cons;
-	Constructor<float> cons2;
-	cons2 = cons;
-	cons = cons2;
-	float float_num = 123.2;
-	string s = itos(float_num);
-	cout << s << endl;
-	string s1 = "ss";
-	string s2 = "ss";
-	int(*add2)(int, int) = add;
-	cout << addp(1, 2) << endl;
+	TemplateTest<float, float> f(1, 2);
+	cout << f.getFisrtPara() << endl;
+
+	//learning::Constructor<float> cons;
+	//Constructor<float> cons2;
+	//cons2 = cons;
+	//cons = cons2;
+	//float float_num = 123.2;
+	//string s = itos(float_num);
+	//cout << s << endl;
+	//string s1 = "ss";
+	//string s2 = "ss";
+	//int(*add2)(int, int) = add;
+	//cout << addp(1, 2) << endl;
 	return 0;
 }
